@@ -4,7 +4,7 @@ Created on Wed Nov 23 23:57:50 2022
 
 @author: choareau
 """
-
+import pytest
 import sys
 sys.path.insert(0, 'Backend/Model/src/')
 import modelAPI 
@@ -32,5 +32,7 @@ correctDataFormat = {
 }
 
 listValue = ['Yes', 'No']
+
+@pytest.mark.run_these_please
 b = modelAPI.get_prediction(correctDataFormat)
 assert b in listValue
