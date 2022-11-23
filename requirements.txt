@@ -3,3 +3,4 @@ uvicorn
 pandas
 pydantic
 typing
+scikit-learn == 1.0.2
