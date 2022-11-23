@@ -9,6 +9,8 @@ import sys
 sys.path.insert(0, 'Backend/Model/src/')
 import modelAPI 
 
+@pytest.mark.run_these_please
+
 correctDataFormat = {
   'gender': 'Male',
   'SeniorCitizen': 'Yes',
@@ -33,6 +35,5 @@ correctDataFormat = {
 
 listValue = ['Yes', 'No']
 
-@pytest.mark.run_these_please
 b = modelAPI.get_prediction(correctDataFormat)
 assert b in listValue
