@@ -6,7 +6,7 @@ Created on Wed Nov 23 23:57:50 2022
 """
 
 import sys
-sys.path.insert(0, '../../Web/src/')
+sys.path.insert(0, '../../Model/src/')
 import modelAPI 
 
 correctDataFormat = {
