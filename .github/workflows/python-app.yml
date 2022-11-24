@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   container-test-job:
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     services:
       service-name-1:
         image: tof974/model-api-docker:latest
@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Get from service-1
-        run: "curl -x POST http://localhost:8000/
+        run: "curl -x POST http://localhost:8000/"
 
 #      - name: Get from service-2
 #        run: http://localhost:8001
