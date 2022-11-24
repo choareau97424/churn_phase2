@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   container-test-job:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     services:
       service-name-1:
         image: tof974/model-api-docker:latest
