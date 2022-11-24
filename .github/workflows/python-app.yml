@@ -21,19 +21,19 @@ jobs:
         ports:
            - 8000:8000
 
-      service-name-2:
-        image: tof974/web-api-docker:latest
-        ports:
-           - 8001:8000
+#      service-name-2:
+#        image: tof974/web-api-docker:latest
+#        ports:
+#           - 8001:8000
            
-      service-name-3:
-        image: tof974/data-api-docker:latest
-        ports:
-           - 8002:8000
+#      service-name-3:
+#        image: tof974/data-api-docker:latest
+#        ports:
+#           - 8002:8000
 
     steps:
       - name: Get from service-1
-        run: "curl -x POST http://localhost:8000/"
+        run: "curl -X GET http://localhost:8000/"
 
 #      - name: Get from service-2
 #        run: http://localhost:8001
