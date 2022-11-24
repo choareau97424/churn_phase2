@@ -13,22 +13,51 @@ permissions:
   contents: read
 
 jobs:
-  build:
-
+  container-test-job:
     runs-on: ubuntu-latest
+    services:
+      service-name-1:
+        image: tof974/model-api-docker:latest
+        ports:
+           - 8000:8000
+
+      service-name-2:
+        image: tof974/web-api-docker:latest
+        ports:
+           - 8001:8000
+           
+      service-name-3:
+        image: tof974/data-api-docker:latest
+        ports:
+           - 8002:8000
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.9.12
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.9.12"
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest
-        pip install requests
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Test with pytest
-      run: |
-        pytest TestScripts/requestPost_Tests.py
+      - name: Get from service-1
+        run: http://localhost:8000/
+
+      - name: Get from service-2
+        run: http://localhost:8001
+
+
+#      - name: post a user example
+#        run: "curl -x POST http://localhost:3001/api/user -H 'Content-Type: application/json' -d '{\"username"\: \"hello"\, \"address"\: "sampleaddress"}' "
+
+#  build:
+
+#    runs-on: ubuntu-latest
+
+#    steps:
+#    - uses: actions/checkout@v3
+#    - name: Set up Python 3.9.12
+#      uses: actions/setup-python@v3
+#      with:
+#        python-version: "3.9.12"
+#    - name: Install dependencies
+#      run: |
+#        python -m pip install --upgrade pip
+#        pip install pytest
+#        pip install requests
+#        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+#    - name: Test with pytest
+#      run: |
+#        pytest TestScripts/requestPost_Tests.py
