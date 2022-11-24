@@ -35,8 +35,8 @@ jobs:
       - name: Get from service-1
         run: http://localhost:8000/
 
-      - name: Get from service-2
-        run: http://localhost:8001
+#      - name: Get from service-2
+#        run: http://localhost:8001
 
 
 #      - name: post a user example
