@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Get from service-1
-        run: http://localhost:8000/
+        run: "curl -x POST http://localhost:8000/
 
 #      - name: Get from service-2
 #        run: http://localhost:8001
