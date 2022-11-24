@@ -3,6 +3,7 @@
 # Import required modules
 import pickle
 import pandas as pd
+import os.path
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from typing import Literal
@@ -54,6 +55,7 @@ def get_prediction(data: Features):
     try:
         
         model_file="~/model2.pkl"
+        model_file = os.path.expanduser(model_file)
         with open(model_file, 'rb') as f:
             model = pickle.load(f)
         
