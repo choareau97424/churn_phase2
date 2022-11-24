@@ -33,6 +33,6 @@ def test_predict():
   }
 
   listValue = ['Yes', 'No']
-
   b = modelAPI.get_prediction(correctDataFormat)
+  b = 'test'
   assert b in listValue
