@@ -128,7 +128,7 @@ def get_prediction(data: Features):
         r = requests.post(
             url='http://{address}:{port}/prediction'.format(address=api_address_model, port=api_port_model), 
             json=encData,
-            headers=newHeaders)
+            headers=newHeaders,timeout=2.0)
 
         dictData = data.dict()
         df = pd.DataFrame.from_dict([dictData])
