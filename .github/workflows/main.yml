@@ -22,14 +22,14 @@ jobs:
     - name: Deploy Stage
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'http://example.com/'
+        url: 'http://localhost:8000/'
         method: 'GET'
         
     - name: Make Request
       id: myRequest
       uses: fjogeleit/http-request-action@v1
       with:
-        url: "http://example.com"
+        url: "http://localhost:8000"
         
     - name: Show Response
       run: |
