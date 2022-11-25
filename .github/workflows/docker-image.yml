@@ -36,7 +36,7 @@ jobs:
       service-name-1:
         image: tof974/web-api-docker:latest
         ports:
-           - "8001:8000"
+           - "8000:8000"
 #
 #      service-name-2:
 #        image: tof974/web-api-docker:latest
@@ -62,4 +62,4 @@ jobs:
       - name: Get from service-1
         run: |
           sleep 10
-          curl -X GET localhost:8001
+          curl -X GET localhost:8000
