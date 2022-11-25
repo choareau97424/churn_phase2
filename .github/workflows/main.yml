@@ -1,3 +1,11 @@
+name: Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
 
   deployment:
@@ -9,18 +17,14 @@ jobs:
     - name: Deploy Stage
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'https://ansible.io/api/v2/job_templates/84/launch/'
-        method: 'POST'
-        username: ${{ secrets.AWX_USER }}
-        password: ${{ secrets.AWX_PASSWORD }}
-        customHeaders: '{"Content-Type": "application/json"}'
-        data: '{"key_1": "value_1", "key_2": "value_2"}'
+        url: 'http://localhost:8000/'
+        method: 'GET'
         
     - name: Make Request
       id: myRequest
       uses: fjogeleit/http-request-action@v1
       with:
-        url: "http://yoursite.com/api"
+        url: "http://example.com"
         
     - name: Show Response
       run: |
