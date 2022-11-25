@@ -60,4 +60,4 @@ jobs:
 #           - "8000:8000"
         
       - name: Get from service-1
-        run: "curl -X GET http://0.0.0.0:8000/"
+        run: "curl -X GET 0.0.0.0:8000"
