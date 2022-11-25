@@ -45,7 +45,7 @@ jobs:
 #           - 8001:8000
            
       Run the Docker Image:
-        image: tof974/my-image-test:latest
+        image: my-image-test:latest
         ports:
            - 8000:8000
 #
