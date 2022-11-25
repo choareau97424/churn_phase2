@@ -13,19 +13,30 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    
+      #- uses: docker/build-push-action@v2
+      #  with:
+      #    tags: test-image:latest
+      #    push: false
+      
+          
       - uses: actions/checkout@v3
       - name: Build the Docker image
         run: docker build . --file ./Backend/Model/Dockerfile --tag my-image-test:latest
+        
+      - uses: addnab/docker-run-action@v3
+        name: Run action on Docker image
+        with:
+          image: my-image-test:latest
+          run: "curl -X GET https://localhost:8000/"
   
-  container-test-job:
+#  container-test-job:
   
-    runs-on: ubuntu-latest
-    services:
-      service-name-1:
-        image: my-image-test:latest
-        ports:
-           - "8000:8000"
+#    runs-on: ubuntu-latest
+#    services:
+#      service-name-1:
+#        image: my-image-test:latest
+#        ports:
+#           - "8000:8000"
 #
 #      service-name-2:
 #        image: tof974/web-api-docker:latest
@@ -37,14 +48,14 @@ jobs:
 #        ports:
 #           - 8002:8000
 
-    steps:
-      - name: Get from service-1
-        run: "curl -X GET https://example.com"      
+ #   steps:
+ #     - name: Get from service-1
+ #       run: "curl -X GET https://example.com"      
  #   services:
  #     service-name-1:
  #       image: my-image-test:latest
  #       ports:
  #          - "8000:8000"
         
-      - name: Get from service-1
-        run: "curl -X GET http://localhost:8000/"
+ #     - name: Get from service-1
+ #       run: "curl -X GET http://localhost:8000/"
