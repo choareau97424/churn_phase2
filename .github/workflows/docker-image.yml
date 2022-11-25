@@ -18,9 +18,9 @@ jobs:
 #      #    tags: test-image:latest
 #      #    push: false
       
-      - uses: actions/checkout@v3
-      - name: Build the Docker image
-        run: docker build . --file ./Backend/Model/Dockerfile --tag my-image-test:latest
+#      - uses: actions/checkout@v3
+#      - name: Build the Docker image
+#        run: docker build . --file ./Backend/Model/Dockerfile --tag my-image-test:latest
         
 #      - uses: actions/checkout@v3
 #        name: Run action on Docker image
@@ -34,20 +34,20 @@ jobs:
   
 #    runs-on: ubuntu-latest
     services:
-#      service-name-1:
-#        image: tof974/model-api-docker:latest
-#        ports:
-#           - 8000:8000
+#     service-name-1:
+        image: tof974/model-api-docker:latest
+        ports:
+           - 8000:8000
 #
 #      service-name-2:
 #        image: tof974/web-api-docker:latest
 #        ports:
 #           - 8001:8000
            
-      Run the Docker Image:
-        image: my-image-test:latest
-        ports:
-           - 8000:8000
+#      Run the Docker Image:
+#        image: my-image-test:latest
+#        ports:
+#           - 8000:8000
 #
 #    steps:
 #      - name: Get from service-1
