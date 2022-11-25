@@ -17,7 +17,7 @@ jobs:
     - name: Deploy Stage
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'http://localhost:8000/'
+        url: 'http://example.com/'
         method: 'GET'
         
     - name: Make Request
