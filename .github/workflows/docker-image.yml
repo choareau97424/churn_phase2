@@ -23,8 +23,8 @@ jobs:
       - name: Build the Docker image
         run: docker build . --file ./Backend/Model/Dockerfile --tag my-image-test:latest
         
-      #- uses: addnab/docker-run-action@v3
-      - name: Run action on Docker image
+      - uses: actions/checkout@v3
+        name: Run action on Docker image
         with:
           image: my-image-test:latest
           run: "curl -X GET https://localhost:8000/"
