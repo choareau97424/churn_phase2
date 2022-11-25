@@ -11,8 +11,28 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
+    services:
+      service-name-1:
+        image: my-image-test:latest
+        ports:
+           - "8000:8000"
+#
+#      service-name-2:
+#        image: tof974/web-api-docker:latest
+#        ports:
+#           - 8001:8000
+           
+#      service-name-3:
+#        image: tof974/data-api-docker:latest
+#        ports:
+#           - 8002:8000
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file ./Backend/Model/Dockerfile --tag my-image-test:latest
+    
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: docker build . --file ./Backend/Model/Dockerfile --tag my-image-test:latest
+        
+      - name: Get from service-1
+        run: "curl -X GET https://example.com"
