@@ -36,4 +36,4 @@ jobs:
  #          - "8000:8000"
         
       - name: Get from service-1
-        run: "curl -X GET https://example.com"
+        run: "curl -X GET https://localhost:8000/"
