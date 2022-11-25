@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt-get install -y python3 python3-pip
 RUN apt-get install -y python3-requests-file
 RUN mkdir -p /Backend/Model/src
-COPY /src /Backend/Model/src
+COPY /Backend/Model/src /Backend/Model/src
 RUN pip3 install -r /Backend/Model/src/requirements.txt
 RUN mkdir -p /Backend/Model/src/data
 VOLUME /Backend/Model/src/data
