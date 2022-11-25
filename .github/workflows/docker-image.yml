@@ -12,7 +12,7 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    steps:
+#    steps:
 #      #- uses: docker/build-push-action@v2
 #      #  with:
 #      #    tags: test-image:latest
@@ -34,7 +34,7 @@ jobs:
   
 #    runs-on: ubuntu-latest
     services:
-#     service-name-1:
+     service-name-1:
         image: tof974/model-api-docker:latest
         ports:
            - 8000:8000
@@ -49,7 +49,7 @@ jobs:
 #        ports:
 #           - 8000:8000
 #
-#    steps:
+    steps:
 #      - name: Get from service-1
 #        uses: fjogeleit/http-request-action@v1
 #        with:
