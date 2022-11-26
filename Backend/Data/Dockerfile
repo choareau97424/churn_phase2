@@ -10,4 +10,4 @@ RUN mkdir -p /Backend/Data/src/data
 VOLUME /Backend/Data/src/data
 CMD ["/Backend/Data/src/dataAPI.py"]
 EXPOSE 8000
-CMD ["uvicorn", "dataAPI:api", "--app-dir", "/Backend/Data/src/", "--host", "172.50.0.4", "--port", "8002"]
+CMD ["uvicorn", "dataAPI:api", "--app-dir", "/Backend/Data/src/", "--host", "0.0.0.0", "--port", "8002"]
