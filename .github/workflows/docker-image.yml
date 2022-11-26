@@ -61,8 +61,7 @@ jobs:
 #        image: my-image-test:latest
 #        ports:
 #           - 8000:8000
-        
-      name: Check the status of the Docker Image
-      run: |
+      - name: Check the status of the Docker Image
+        run: |
           sleep 10
           curl -X GET localhost:8000
