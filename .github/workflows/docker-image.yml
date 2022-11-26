@@ -12,15 +12,15 @@ jobs:
 
     runs-on: ubuntu-latest
     
-#    steps:
+    steps:
 #      #- uses: docker/build-push-action@v2
 #      #  with:
 #      #    tags: test-image:latest
 #      #    push: false
       
-#      - uses: actions/checkout@v3
-#      - name: Build the Docker image
-#        run: docker build . --file ./Backend/Model/Dockerfile --tag my-image-test:latest
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: docker build . --file ./Backend/Model/Dockerfile --tag my-image-test:latest
         
 #      - uses: actions/checkout@v3
 #        name: Run action on Docker image
@@ -33,11 +33,11 @@ jobs:
 #container-test-job:
   
 #    runs-on: ubuntu-latest
-    services:
-     service-name-1:
-        image: tof974/data-api-docker:latest
-        ports:
-           - 8000:8000
+#    services:
+#     service-name-1:
+#        image: tof974/data-api-docker:latest
+#        ports:
+#           - 8000:8000
 #
 #      service-name-2:
 #        image: tof974/web-api-docker:latest
@@ -50,7 +50,7 @@ jobs:
 #           - 8000:8000
 #
 
-    steps:
+#    steps:
 
 #      - name: Get from service-1
 #        uses: fjogeleit/http-request-action@v1
@@ -63,5 +63,6 @@ jobs:
 #           - 8000:8000
       - name: Check the status of the Docker Image
         run: |
+          docker run -d my-image-test
           sleep 10
           curl -X GET localhost:8000
