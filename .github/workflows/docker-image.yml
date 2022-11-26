@@ -35,7 +35,7 @@ jobs:
 #    runs-on: ubuntu-latest
     services:
      service-name-1:
-        image: tof974/model-api-docker:latest
+        image: tof974/data-api-docker:latest
         ports:
            - 8000:8000
 #
