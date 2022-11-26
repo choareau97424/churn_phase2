@@ -29,6 +29,13 @@ jobs:
           run: |
             sleep 10
             curl -X GET localhost:8000
+            
+      - name: Get from service-1
+        uses: fjogeleit/http-request-action@v1
+        with:
+          run: |
+            sleep 10
+            curl -X GET localhost:8000      
   
 #container-test-job:
   
