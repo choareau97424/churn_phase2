@@ -21,21 +21,26 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build the Docker image
         run: docker build . --file ./Backend/Model/Dockerfile --tag my-image-test:latest
-        
-      - uses: actions/checkout@v3
-        name: Run action on Docker image
+      
+      - uses: satak/webrequest-action@master
         with:
-          image: my-image-test:latest
-          run: |
-            sleep 10
-            curl -X GET localhost:8000
+          url: http://localhost:8000/
+          method: GET
+  
+#      - uses: actions/checkout@v3
+#        name: Run action on Docker image
+#        with:
+#          image: my-image-test:latest
+#          run: |
+#            sleep 10
+#            curl -X GET localhost:8000
             
-      - name: Get from service-1
-        uses: fjogeleit/http-request-action@v1
-        with:
-          run: |
-            sleep 10
-            curl -X GET localhost:8000      
+#      - name: Get from service-1
+#        uses: fjogeleit/http-request-action@v1
+#        with:
+#          run: |
+#            sleep 10
+#            curl -X GET localhost:8000      
   
 #container-test-job:
   
