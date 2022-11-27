@@ -9,17 +9,17 @@ on:
   pull_request:
     branches: [ "main" ]
 
-#permissions:
-#  contents: read
+permissions:
+  contents: read
 
 jobs:
-  container-test-job:
-    runs-on: ubuntu-latest
-    services:
-      service-name-1:
-        image: my-image-test:latest
-        ports:
-           - "8000:8000"
+#  container-test-job:
+#    runs-on: ubuntu-latest
+#    services:
+#      service-name-1:
+#        image: my-image-test:latest
+#        ports:
+#           - "8000:8000"
 #
 #      service-name-2:
 #        image: tof974/web-api-docker:latest
@@ -31,9 +31,9 @@ jobs:
 #        ports:
 #           - 8002:8000
 
-    steps:
-      - name: Get from service-1
-        run: "curl -X GET https://example.com"
+#    steps:
+#      - name: Get from service-1
+#        run: "curl -X GET https://example.com"
 
 #      - name: Get from service-2
 #        run: http://localhost:8001
@@ -42,22 +42,22 @@ jobs:
 #      - name: post a user example
 #        run: "curl -x POST http://localhost:3001/api/user -H 'Content-Type: application/json' -d '{\"username"\: \"hello"\, \"address"\: "sampleaddress"}' "
 
-#  build:
+  build:
 
-#    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-#    steps:
-#    - uses: actions/checkout@v3
-#    - name: Set up Python 3.9.12
-#      uses: actions/setup-python@v3
-#      with:
-#        python-version: "3.9.12"
-#    - name: Install dependencies
-#      run: |
-#        python -m pip install --upgrade pip
-#        pip install pytest
-#        pip install requests
-#        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-#    - name: Test with pytest
-#      run: |
-#        pytest TestScripts/requestPost_Tests.py
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.9.12
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9.12"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+        pip install requests
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Test with pytest
+      run: |
+        pytest TestScripts/requestPost_Tests.py
