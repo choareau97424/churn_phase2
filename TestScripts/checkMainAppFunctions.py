@@ -3,7 +3,9 @@ sys.path.insert(0, 'Backend/Model/src/')
 sys.path.insert(0, 'Backend/Data/src/')
 import modelAPI 
 import dataAPI 
+import pytest
   
+@pytest.mark.testModelPrediction
 def testModelPrediction():
   
   correctDataFormatModel = {
@@ -36,7 +38,7 @@ def testModelPrediction():
   
   
   
-  
+@pytest.mark.testDataSaving  
 def testDataSaving():
   
   correctDataFormatData = {
