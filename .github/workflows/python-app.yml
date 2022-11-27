@@ -58,6 +58,8 @@ jobs:
         pip install pytest
         pip install requests
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Check Model Prediction function
+    - name: Check Model Prediction
       run: pytest -v TestScripts/checkMainAppFunctions.py::testModelPrediction
-      #TestScripts/checkMainAppFunctions.py::testModelPrediction
+    - name: Check Data Saving
+      run: pytest -v TestScripts/checkMainAppFunctions.py::testDataSaving
+   
