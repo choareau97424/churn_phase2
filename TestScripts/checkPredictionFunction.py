@@ -35,7 +35,7 @@ def testModelPrediction():
   }
   
   correctDataFormatData = {
-    'customerID': '1234-ABCDE'
+    'customerID': '1234-ABCDE',
     'gender': 'Male',
     'SeniorCitizen': 'Yes',
     'Partner': 'Yes',
