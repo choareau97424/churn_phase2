@@ -66,7 +66,7 @@ def testModelPrediction():
   assert modelResponse in listValue
   
   # Check if Data API returns expected value
-  dataResponse = dataAPI.save_data(correctDataFormatModelData)
+  dataResponse = dataAPI.save_data(correctDataFormatData)
   assert dataResponse == 'New entry saved'
   
 #def testWebToModelConnection():
