@@ -60,10 +60,10 @@ def save_data(data: Features):
             dictData[key] = [value]
         
         newEntry = pd.DataFrame.from_dict(dictData)
-        if (os.path.isfile('/Backend/Data/src/data/churn.csv')):
-            newEntry.to_csv('/Backend/Data/src/data/churn.csv', mode='a', index=False, header=False)
+        if (os.path.isfile('Backend/Data/src/data/churn.csv')):
+            newEntry.to_csv('Backend/Data/src/data/churn.csv', mode='a', index=False, header=False)
         else:
-            newEntry.to_csv('/Backend/Data/src/data/churn.csv', index=False)
+            newEntry.to_csv('Backend/Data/src/data/churn.csv', index=False)
         
         return  "New entry saved"       
 
