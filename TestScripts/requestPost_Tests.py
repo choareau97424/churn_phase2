@@ -7,7 +7,7 @@ Created on Wed Nov 23 23:57:50 2022
 def testModelPrediction():
   
   import sys
-  sys.path.insert(0, '../Backend/Model/src/')
+  sys.path.insert(0, 'Backend/Model/src/')
   import modelAPI 
 
   correctDataFormat = {
