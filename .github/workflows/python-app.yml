@@ -59,4 +59,5 @@ jobs:
         pip install requests
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Check Model Prediction function
-      run: pytest TestScripts/checkMainAppFunctions.py
+      run: pytest -m testModelPrediction -v
+      #TestScripts/checkMainAppFunctions.py
