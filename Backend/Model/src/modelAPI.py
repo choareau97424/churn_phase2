@@ -49,7 +49,7 @@ def home():
 
 # Get all questions for the selected test type and sort them randomly
 @api.post('/prediction/', name='Get the prediction from the model', tags=['Public'])
-async def get_prediction(data: Features):
+def get_prediction(data: Features):
 
     try:
         
