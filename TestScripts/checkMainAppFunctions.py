@@ -1,17 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Nov 23 23:57:50 2022
-
-@author: choareau
-"""
-def testModelPrediction():
-  
-  import sys
+import sys
   sys.path.insert(0, 'Backend/Model/src/')
   sys.path.insert(0, 'Backend/Data/src/')
   import modelAPI 
   import dataAPI 
-
+  
+def testModelPrediction():
+  
   correctDataFormatModel = {
     'gender': 'Male',
     'SeniorCitizen': 'Yes',
@@ -33,6 +27,17 @@ def testModelPrediction():
     'MonthlyCharges': 0,
     'TotalCharges': 0
   }
+  
+  listValue = ['Yes', 'No']
+  
+  # Check if Model API returns expected value
+  modelResponse = modelAPI.get_prediction(correctDataFormatModel)
+  assert modelResponse in listValue
+  
+  
+  
+  
+def testDataSaving():
   
   correctDataFormatData = {
     'customerID': '1234-ABCDE',
@@ -58,16 +63,11 @@ def testModelPrediction():
     'Churn': 'Yes',
     'ChurnPrediction': 'Yes'
   }
-
-  listValue = ['Yes', 'No']
-  
-  # Check if Model API returns expected value
-  modelResponse = modelAPI.get_prediction(correctDataFormatModel)
-  assert modelResponse in listValue
   
   # Check if Data API returns expected value
   dataResponse = dataAPI.save_data(correctDataFormatData)
   assert dataResponse == 'New entry saved'
+
   
 #def testWebToModelConnection():
 #  
