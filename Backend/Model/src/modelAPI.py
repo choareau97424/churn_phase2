@@ -53,7 +53,7 @@ def get_prediction(data: Features):
 
     try:
         
-        model_file="/Backend/Model/src/model2.pkl"
+        model_file="~/Backend/Model/src/model2.pkl"
         with open(model_file, 'rb') as f:
             model = pickle.load(f)
         
