@@ -58,6 +58,6 @@ jobs:
         pip install pytest
         pip install requests
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Test with pytest
+    - name: Check Model Prediction function
       run: |
-        pytest TestScripts/requestPost_Tests.py
+        pytest TestScripts/checkPredictionFunction.py
